@@ -1,9 +1,11 @@
 import { Hono } from 'hono'
+import { authRoutes } from './modules/Auth/routes'
 
 const app = new Hono()
 
-app.get('/', (c) => {
-	return c.text('Hello Hono!')
-})
+app.route('/api', authRoutes)
 
-export default app
+export default {
+	port: 3000,
+	fetch: app.fetch
+}
