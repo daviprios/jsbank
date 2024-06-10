@@ -1,8 +1,12 @@
 {
-  "dependencies": {
-    "hono": "^4.4.4"
-  },
-  "scripts": {
-    "dev": "bun --watch run ./src/index.ts"
-  }
+	"dependencies": {
+		"hono": "^4.4.4"
+	},
+	"scripts": {
+		"docker:build": "docker compose build",
+		"docker:up": "docker compose up -d",
+		"docker:down": "docker compose down",
+		"dev": "bun --watch run ./src/index.ts",
+		"start": "bun run ./src/index.ts"
+	}
 }
